@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <div class="row mt-5">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <a class="text-decoration-none" style="color: inherit" href="{% url 'core:best_sellers' %}">
+                <div class="card overflow-hidden">
+                    <div class="card-body p-0 d-flex align-items-center">
+                        <div style="background-color: #fff159" class="py-4 px-5 mfe-3">
+                            <i class="fa fa-3x fa-user-check"></i>
+                        </div>
+                        <div>
+                            <div class="text-muted text-uppercase font-weight-bold small">Best sellers by category</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <a class="text-decoration-none" style="color: inherit" href="{% url 'core:most_expensive_items' %}">
+                <div class="card overflow-hidden">
+                    <div class="card-body p-0 d-flex align-items-center">
+                        <div style="background-color: #fff159" class=" py-4 px-5 mfe-3">
+                            <i class="fa fa-3x fa-dollar-sign"></i>
+                        </div>
+                        <div>
+                            <div class="text-muted text-uppercase font-weight-bold small">Most expensive by category
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+
+{% endblock %}

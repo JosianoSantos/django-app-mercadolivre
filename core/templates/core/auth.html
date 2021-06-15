@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block sidebar %}{% endblock %}
+{% block header %}{% endblock %}
+
+{% block extra_css %}
+    <style>
+        body {
+            background-color: lightgray !important;
+        }
+    </style>
+{% endblock %}
+
+{% block clean_content %}
+
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center mb-2">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.10.1/mercadolibre/logo-pt__large_plus.png"
+                             alt="">
+                    </div>
+
+                    <div class="p-5 pt-0">
+                        <h5 class="">Would you like to authenticate in your Mercado Libre
+                            account?</h5>
+                        <br>
+                        <a href="https://auth.mercadolivre.com.br/authorization?response_type=code&client_id=4824734347650288&redirect_uri=http://localhost:8000"
+                           class="btn btn-info text-center btn-block">Continue <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                    <div class="text-center">
+                        <a class="text-center text-muted" href="{% url 'core:home' %}">Maybe later</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+{% endblock %}

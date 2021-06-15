@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}Most expensive by category{% endblock %}
+
+{% block content %}
+
+    <div class="row ">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="">Most expensives items in "Smartwatches" </h4>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-12">
+
+            {% for item in items %}
+
+                <div class="card mb-0 border-bottom">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <a class="text-decoration-none" target="_blank" href="{{ item.permalink }}">
+                                    <img width="130" height="130" src="{{ item.thumbnail }}"
+                                         class="ui-search-result-image__element" alt="{{ item.title }}">
+                                </a>
+                            </div>
+                            <div class="col-sm-10">
+                                <a class="text-decoration-none" target="_blank" href="{{ item.permalink }}">
+                                    <h5 class="text-muted">{{ item.title }}</h5>
+                                </a>
+                                <h3>$ {{ item.price|floatformat|intcomma }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
